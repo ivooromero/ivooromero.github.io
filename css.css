@@ -133,14 +133,32 @@ header ul a{
 .menu video{
     position: absolute;
     z-index: -1;
-    left: 60vh;
+    left: 55vh;
     width: 130vh;
     height: 100vh;
 }
+.menuItem{
+    color: rgba(0, 0, 0, .6);
+}
+.menuItem:hover {
+    -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+    -webkit-mask-size: 200%;
+    animation: shine 2s infinite;
+  }
+  
+  @-webkit-keyframes shine {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }
 .menu {
     position: fixed;
     width: 90%;
-    height: 100%;
+    height: 100vh;
     transform: translateX(-100%);
     transition: transform .8s;
     top: 1px;
@@ -148,7 +166,6 @@ header ul a{
     right: 0;
     bottom: 0;
     background: #010101;
-    color: white;
     padding-top: 4rem;
     z-index: 100;
     display: flex;
@@ -158,7 +175,10 @@ header ul a{
     overflow: hidden;
 }
 .menu ul{
-    padding-top: 25vh;
+    padding-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
 }
 .menu li{
     width: min-content;
@@ -170,12 +190,13 @@ header ul a{
 .menu li a{
     width: min-content;
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: 'Unbounded';
     font-weight: 600;
     font-size: 7vh;
     justify-self: center;
     align-self: center;
+
 }
 .showMenu {
     transform: translateX(0);
